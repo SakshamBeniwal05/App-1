@@ -56,11 +56,6 @@ function Header() {
                         </div>
                     </div>
                 </div>
-
-
-
-
-                
             </Container>
         </>
     )
