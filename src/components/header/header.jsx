@@ -36,7 +36,6 @@ function Header() {
     ]
     return (
         <>
-            <Container>
                 <div className="text-white font-semibold">
 
                     <div className="flex h-[100px] bg-[#2e2e2e] justify-around items-center w-full">
@@ -56,7 +55,6 @@ function Header() {
                         </div>
                     </div>
                 </div>
-            </Container>
         </>
     )
 }

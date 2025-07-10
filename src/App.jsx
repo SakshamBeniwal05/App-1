@@ -26,7 +26,7 @@ function App() {
 
   return !loading ? (
     <>
-      <Header />  
+      <Header/>  
       <div className='flex justify-center items-center bg-[#1e1e1e] h-screen'>
         <div className='flex items-center justify-center w-11/12 bg-[#2e2e2e] h-11/12 text-white font-bold text-3xl'>HELLO WORLD</div>
       </div>
