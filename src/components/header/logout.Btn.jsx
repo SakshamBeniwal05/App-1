@@ -10,7 +10,7 @@ const Logout_Btn = () => {
             .catch((error) => console.log(`logout issue`))
     }
     return (
-        <button className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' onClick={logoutHandler}>
+        <button className="cursor-pointer px-4 py-2 border duration-200 rounded-full hover:text-black hover:bg-white" onClick={logoutHandler}>
             Logout
         </button>
     )
