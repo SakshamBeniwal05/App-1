@@ -53,8 +53,8 @@ function Header() {
                                 ) : null
                             )}
                             {c_status && (
-                                <li> 
-                                    <Logout_Btn /> 
+                                <li>
+                                    <Logout_Btn />
                                 </li>
                             )}
                         </ul>
