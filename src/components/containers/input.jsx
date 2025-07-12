@@ -11,4 +11,3 @@ const Input_Slab = React.forwardRef(({ label, type = "text", className = "", ...
 })
 
 export default Input_Slab;
-<input className="bg-white" type="text" />
