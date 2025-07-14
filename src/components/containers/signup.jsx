@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./button";
 import Input_Slab from "./input";
@@ -14,19 +14,20 @@ const Sign_Up = () => {
     const [error, setError] = useState("")
     const { register, handleSubmit } = useForm()
 
-    async function create_Account() {
+    async function create_Account(data) {
         try {
-            const userData = await authService.currentUser(data)
-            if (userData) {
+            const session = await authService.currentUser(data)
+            if (session) {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
-                    dispatch(reduxLogin);
+                    dispatch(reduxLogin(userData));
                     navigate('/')
                 }
             }
         }
         catch (error) {
             console.log(`component : containers : signup.jsx : creating : ${error}`);
+            setError("Failed to create account. Please try again.");
         }
     }
 
@@ -55,7 +56,7 @@ const Sign_Up = () => {
 
                         <Input_Slab label="Username" placeholder="Enter your full name" {...register('name', { required: true, })} />
                         <Input_Slab label="E-mail" placeholder="Enter your email" type="email" {...register('email', {
-                            required: true, validate: { matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address", }
+                            required: true, validate: { matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address", }
                         })} />
                         <Input_Slab label="Password" placeholder="Enter your password" type="password" {...register('password', { required: true, })} />
                         <Button type="submit" >Sign Up</Button>

@@ -31,6 +31,7 @@ function App() {
         <div className='flex items-center justify-center w-11/12 bg-[#2e2e2e] h-11/12 text-white font-bold text-3xl'>HELLO WORLD</div>
       </div>
       <Footer />
+      
     </>
   ) : null
 }
