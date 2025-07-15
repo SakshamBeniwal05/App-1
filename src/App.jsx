@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { login, logout } from './storage/slices/status.js'
 import Header from './components/header/header.jsx';
 import Footer from './components/footer/footer.jsx';
+import { Outlet } from 'react-router-dom';
 function App() {
   const [loading, setloading] = useState(true);
   const dispatch = useDispatch()
@@ -28,7 +29,7 @@ function App() {
     <>
       <Header/>  
       <div className='flex justify-center items-center bg-[#1e1e1e] h-screen'>
-        <div className='flex items-center justify-center w-11/12 bg-[#2e2e2e] h-11/12 text-white font-bold text-3xl'>HELLO WORLD</div>
+        <Outlet />
       </div>
       <Footer />
       

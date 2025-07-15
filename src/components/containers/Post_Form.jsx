@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Button from 'button.jsx';
+import Button from './button.jsx';
 import Input_Slab from "./input";
 import { useForm } from "react-hook-form";
 import document_services from '../../services/appp.config'
@@ -26,8 +26,6 @@ const Post_Form = ({ post }) => {
             if (file) {
                 document_services.delete(post.featured_image)
             }
-
-
             const dbPost = await appwriteService.updatePost(post.$id, {
                 ...data,
                 featured_image: file ? file.$id : undefined,
@@ -77,7 +75,7 @@ const Post_Form = ({ post }) => {
 
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+        <form onSubmit={handleSubmit(Submit_Data)} className="flex flex-wrap">
             <div className="w-2/3 px-2">
                 <Input_Slab
                     label="Title :"
