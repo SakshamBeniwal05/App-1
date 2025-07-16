@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Button from './button.jsx';
@@ -9,7 +9,7 @@ import Select_Slab from './select'
 import RTE from './RTE'
 const Post_Form = ({ post }) => {
     const navigate = useNavigate();
-    const userData = useSelector((state) => state.user.userdata)
+    const userData = useSelector((state) => state.slice1.userData)
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -70,8 +70,11 @@ const Post_Form = ({ post }) => {
             if (name === "title") {
                 setValue("slug", slugTransform(value.title), { shouldValidate: true });
             }
-        })
-    })
+        });
+
+        return () => subscription.unsubscribe();
+    }, [watch, slugTransform, setValue]);
+
 
 
     return (
