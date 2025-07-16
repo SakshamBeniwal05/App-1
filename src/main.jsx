@@ -9,7 +9,7 @@ import SignUp_Page from './pages/Signup_page.jsx'
 import Protection from './components/containers/AUth_Protection.jsx'
 import All_Posts_page from './pages/All_Posts_page.jsx'
 import Add_Post_page from './pages/Add_Post_page.jsx'
-import Edit_Post_page from './pages/Edit_Post_page.jsx' // typo fixed
+import Edit_Post_page from './pages/Edit_Post_page.jsx'
 import Post from './pages/Post_page.jsx'
 
 const router = createBrowserRouter([

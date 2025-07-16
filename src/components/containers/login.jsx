@@ -79,7 +79,7 @@ const Login = () => {
 
                         <Input_Slab label="Password" placeholder="Enter your password" type="password" {...register('password', { required: true, })} />
 
-                        <Button type="submit" >Sign In</Button>
+                        <Button type="submit"/>
                         <div className="space-x-1">
                             <span>Don’t have an account?</span>
                             <Link to="/signup" className="text-blue-500 hover:underline">
@@ -89,7 +89,6 @@ const Login = () => {
                     </div>
                 </div>
             </form>
-
         </div>
     )
 }

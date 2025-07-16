@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "./button";
 import Input_Slab from "./input";
 import { useForm } from "react-hook-form";
-import { login as reduxLogin } from '../../storage/slices/status'
+import { login } from "../../storage/slices/status";
 import { useDispatch } from "react-redux";
 import authService from "../../services/auth";
 
@@ -16,11 +16,11 @@ const Sign_Up = () => {
 
     async function create_Account(data) {
         try {
-            const session = await authService.currentUser(data)
+            const session = await authService.createAccount(data)
             if (session) {
-                const userData = await authService.getCurrentUser()
+                const userData = await authService.currentUser()
                 if (userData) {
-                    dispatch(reduxLogin(userData));
+                    dispatch(login(userData));
                     navigate('/')
                 }
             }
@@ -59,7 +59,7 @@ const Sign_Up = () => {
                             required: true, validate: { matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address", }
                         })} />
                         <Input_Slab label="Password" placeholder="Enter your password" type="password" {...register('password', { required: true, })} />
-                        <Button type="submit" childern="Sign Up" />
+                        <Button type="submit" children="Sign Up" />
                         <div className="space-x-1">
                             <span>Have an account?</span>
                             <Link to="/login" className="text-blue-500 hover:underline">

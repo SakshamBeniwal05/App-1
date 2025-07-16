@@ -42,14 +42,14 @@ export class Document_services {
     }
     async get({ slug }) {
         try {
-            return await this.databases.getDocument(config.db_id, config.c_id, slug);
+            return await this.database.getDocument(config.db_id, config.c_id, slug);
         } catch (error) {
             console.log(`ERROR : SERVICE APPP.CONIFG.JS : get ${error}`);
         }
     }
     async gets() {
         try {
-            return await this.databases.listDocuments(config.db_id, config.c_id, [Query.equal("status", "active")])
+            return await this.database.listDocuments(config.db_id, config.c_id, [Query.equal("status", "active")])
         } catch (error) {
             console.log(`ERROR : SERVICE APPP.CONIFG.JS : gets ${error}`);
         }
