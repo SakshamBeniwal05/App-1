@@ -50,7 +50,7 @@ const Sign_Up = () => {
             </div>}
 
             <form onSubmit={handleSubmit(create_Account)}>
-                <div className="shadow-2xl">
+                <div className="shadow-2xl text-white">
                     <div className="h-[550px] w-[500px] bg-[#2e2e2e] flex-col rounded-xl p-4 flex justify-center items-center space-y-5">
                         <h1 className="text-4xl ">Sign Up</h1>
 
@@ -59,12 +59,12 @@ const Sign_Up = () => {
                             required: true, validate: { matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || "Email address must be a valid address", }
                         })} />
                         <Input_Slab label="Password" placeholder="Enter your password" type="password" {...register('password', { required: true, })} />
-                        <Button type="submit" >Sign Up</Button>
+                        <Button type="submit" childern="Sign Up" />
                         <div className="space-x-1">
                             <span>Have an account?</span>
                             <Link to="/login" className="text-blue-500 hover:underline">
                                 Sign In
-                            </Link>
+                            </Link> 
                         </div>
                     </div>
                 </div>
