@@ -72,7 +72,10 @@ export class Document_services {
         }
     }
     getpreview(fileId) {
-        return this.storage.getFilePreview(config.s_id, fileId)
+        const preview = this.storage.getFilePreview(config.s_id, fileId);
+        console.log(preview);
+        return preview;
+        
     }
 
 }
