@@ -28,7 +28,7 @@ function App() {
   return !loading ? (
     <>
       <Header/>  
-      <div className='flex justify-center items-center bg-[#1e1e1e] h-screen'>
+      <div>
         <Outlet />
       </div>
       <Footer />

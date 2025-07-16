@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login as reduxLogin } from '../../storage/slices/status'
+import { login, logout } from "../../storage/slices/status.js";
 import authService from "../../services/auth";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -35,7 +35,7 @@ const Login = () => {
             if (session) {
                 const userData = await authService.currentUser();
                 if (userData) {
-                    dispatch(reduxLogin(userData));
+                    dispatch(login(userData));
                     navigate('/')
                 }
                 else {
@@ -57,9 +57,9 @@ const Login = () => {
             {error && <div className="flex items-center justify-between text-red-600 max-w-80 w-full bg-red-600/10 h-10 shadow">
                 <div className="h-full w-1.5 bg-red-600"></div>
                 <div className="flex items-center">
-                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="icon line">
-                        <path style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.95" d="M11.95 16.5h.1" />
-                        <path d="M3 12a9 9 0 0 1 9-9h0a9 9 0 0 1 9 9h0a9 9 0 0 1-9 9h0a9 9 0 0 1-9-9m9 0V7" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-5 h-5 stroke-current icon line" fill="none">
+                        <path d="M11.95 16.5h.1" className="stroke-[1.95] stroke-linecap-round stroke-linejoin-round" />
+                        <path d="M3 12a9 9 0 0 1 9-9h0a9 9 0 0 1 9 9h0a9 9 0 0 1-9 9h0a9 9 0 0 1-9-9m9 0V7" className="stroke-[1.5] stroke-linecap-round stroke-linejoin-round" />
                     </svg>
                     <p className="text-sm ml-2">{error}</p>
                 </div>
@@ -79,7 +79,7 @@ const Login = () => {
 
                         <Input_Slab label="Password" placeholder="Enter your password" type="password" {...register('password', { required: true, })} />
 
-                        <Button type="submit"/>
+                        <Button type="submit" />
                         <div className="space-x-1">
                             <span>Don’t have an account?</span>
                             <Link to="/signup" className="text-blue-500 hover:underline">
