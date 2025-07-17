@@ -32,7 +32,7 @@ const Sign_Up = () => {
     }
 
     return (
-        <div>
+        <div className="bg-[#1e1e1e] text-white h-screen flex items-center justify-center">
             {error && <div className="flex items-center justify-between text-red-600 max-w-80 w-full bg-red-600/10 h-10 shadow">
                 <div className="h-full w-1.5 bg-red-600"></div>
                 <div className="flex items-center">

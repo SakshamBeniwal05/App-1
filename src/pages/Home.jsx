@@ -21,10 +21,11 @@ const Home = () => {
     }
 
     return (
-        <div className='flex flex-wrap space-5'>
-            {posts.map((post) => {
+        <div className='flex flex-wrap space-5 bg-[#1e1e1e] text-5xl text-white justify-center items-center h-screen'>
+            {/* {posts.map((post) => {
                 <PostCard key={post.id} post={post} />
-            })}
+            })} */}
+            Homepage
         </div>
     )
 }

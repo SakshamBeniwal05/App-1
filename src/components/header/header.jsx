@@ -42,7 +42,7 @@ function Header() {
                 <div className="flex h-[100px] bg-[#2e2e2e] justify-around items-center w-full">
                     <div className="w-1/3">
                         <Link to='/'>
-                            <div className="w-[50px] h-[50px] bg-blue-500"></div>
+                            <div className="w-[50px] h-[50px] flex justify-center items-center text-3xl">Logo</div>
                         </Link>
                     </div>
                     <div className="w-1/3">

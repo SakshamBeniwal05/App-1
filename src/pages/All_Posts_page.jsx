@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import document_services from '../services/appp.config'
 import PostCard from '../components/containers/postcard'
-import Container from '../components/containers/container'
 
 function All_Posts_page() {
     const [posts, setPosts] = useState([])
@@ -13,8 +12,7 @@ function All_Posts_page() {
     })
 
     return (
-        <div className='w-full py-8 bg-[#1e1e1e] h-screen'>
-        <Container>
+        <div className='w-full py-8 bg-[#1e1e1e] h-screen p-10'>
             <div className='flex flex-wrap text-white'>
                 {posts.map((post) => (
                     <div key={post.$id} className='p-2 w-1/4'>
@@ -22,7 +20,6 @@ function All_Posts_page() {
                     </div>
                 ))}
             </div>
-            </Container>
     </div>
     )
 }
