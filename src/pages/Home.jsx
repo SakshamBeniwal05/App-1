@@ -14,8 +14,8 @@ const Home = () => {
 
     if (posts.length === 0) {
         return (
-            <div className='flex flex-wrap text-white h-screen justify-center items-center'>
-                <h1 className='text-2xl font-bold'>Login To Read Posts</h1>
+            <div className='flex flex-wrap space-5 bg-[#1e1e1e] text-5xl text-white justify-center items-center h-screen'>
+                <h1 className='text-2xl font-bold'>No post Read Posts</h1>
             </div>
         )
     }

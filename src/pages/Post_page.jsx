@@ -18,7 +18,7 @@ export default function Post() {
         if (slug) {
             document_services.get(slug).then((post) => {
                 if (post) setPost(post);
-                else navigate("/");
+                else navigate('/');
             });
         } else navigate("/");
     }, [slug, navigate]);
@@ -27,7 +27,7 @@ export default function Post() {
         document_services.delete(post.$id).then((status) => {
             if (status) {
                 document_services.deleeStorage(post.featuredImage);
-                navigate("/");
+                navigate("/");  
             }
         });
     };
