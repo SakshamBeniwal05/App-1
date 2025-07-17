@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import document_services from '../../services/appp.config'
 import Select_Slab from './select'
 import RTE from './RTE'
+
 const Post_Form = ({ post }) => {
     const navigate = useNavigate();
     const userData = useSelector((state) => state.slice1.userData)
